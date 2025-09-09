@@ -7,7 +7,7 @@ interface DirectorInterface {
 interface TeacherInterface {
   workFromHome(): string
   getCoffeeBreak(): string
-  workDirectorTasks(): string
+  workTeacherTasks(): string
 }
 
 class Director implements DirectorInterface {
@@ -29,8 +29,8 @@ class Teacher implements TeacherInterface {
   getCoffeeBreak(): string {
     return 'Getting a coffee break';
   }
-  workDirectorTasks(): string {
-    return 'Getting to director tasks';
+  workTeacherTasks(): string {
+    return 'Getting to teacher tasks';
   }
 }
 
@@ -41,3 +41,6 @@ function createEmployee(salary: number | string): Director | Teacher {
     return new Director();
   }
 }
+console.log(createEmployee(200));
+console.log(createEmployee(300));
+console.log(createEmployee('$500'));
