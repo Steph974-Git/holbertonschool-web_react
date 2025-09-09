@@ -23,17 +23,6 @@ const studentsList: Student[] = [student1, student2]
 
 function StudentsTable(students: Student[]): void {
   const table = document.createElement('table');
-  const thead = document.createElement('thead');
-  const tbody = document.createElement('tbody');
-
-  const headerRow = document.createElement('tr');
-  ["First Name", "Location"].forEach(text => {
-    const th = document.createElement('th');
-    th.textContent = text;
-    headerRow.appendChild(th);
-  });
-  thead.appendChild(headerRow);
-  table.appendChild(thead);
 
   students.forEach(student => {
     const row = document.createElement('tr');
@@ -46,9 +35,8 @@ function StudentsTable(students: Student[]): void {
     locationCell.textContent = student.location;
     row.appendChild(locationCell);
     
-    tbody.appendChild(row);
+    table.appendChild(row);
   });
-  table.appendChild(tbody);
 
   document.body.appendChild(table);
 }
